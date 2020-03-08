@@ -1,3 +1,16 @@
+
+buildscript {
+  ext {
+    springBootVersion = '2.1.13.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+  }
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.1.13.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
@@ -21,9 +34,15 @@ repositories {
 dependencies {
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
-	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	runtimeOnly 'org.postgresql:postgresql:42.2.10'
+
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+	
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
