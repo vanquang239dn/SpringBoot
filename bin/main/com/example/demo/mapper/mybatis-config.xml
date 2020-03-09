@@ -19,7 +19,7 @@
 	<!--エイリアス名(短縮名)を割り当てる. -->
 	<!--com.example.demo.CarがCarとなる -->
     <typeAliases>
-        <package name="com.example.demo" />
+        <package name="com.example.demo.model" />
 <!--
         <package name="com.example.demo.mybatis3.infra.mybatis.typehandler" />
 -->

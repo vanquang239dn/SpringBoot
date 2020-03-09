@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Car;
 import com.example.demo.mapper.CarMapper;
+import com.example.demo.model.Car;
 
 @RestController
 @RequestMapping("/rest/car")
