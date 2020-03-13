@@ -1,16 +1,4 @@
 
-buildscript {
-  ext {
-    springBootVersion = '2.1.13.RELEASE'
-  }
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
-  }
-}
-
 plugins {
 	id 'org.springframework.boot' version '2.1.13.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
@@ -32,9 +20,10 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	
 	runtimeOnly 'org.postgresql:postgresql:42.2.10'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
@@ -46,13 +35,6 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
-	compile 'org.apache.commons:commons-lang3'
-    //spring security
-    compile 'org.springframework.boot:spring-boot-starter-security'
-    // thymeleaf(ロール/権限によるthymeleafのテンプレートの制御)
-    compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity5"
-    compile "org.modelmapper:modelmapper:0.7.5"
 }
 
 buildScan {
